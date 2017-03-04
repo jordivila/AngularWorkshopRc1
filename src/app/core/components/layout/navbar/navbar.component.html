@@ -1,0 +1,10 @@
+<div>  
+    <ul>  
+        <li *ngFor="let item of items; let i = index">  
+            <a [routerLinkActive]="['nav-arrow-first']" [routerLinkActiveOptions]="{exact:false}" [routerLink]="[item.action]">  
+                <i class="fa fa-{{item.icon}}"></i>  
+                <span>{{item.title}}</span>  
+            </a>  
+        </li>  
+    </ul>  
+</div>

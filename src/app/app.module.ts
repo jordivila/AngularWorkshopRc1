@@ -1,3 +1,4 @@
+import { CoreModule } from './core/core.module';
 import { NotFoundModule } from './not-found/not-found.module';
 import { Feature2Module } from './feature2/feature2.module';
 import { Feature1Module } from './feature1/feature1.module';
@@ -20,7 +21,8 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     Feature1Module,
     Feature2Module,
-    NotFoundModule
+    NotFoundModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
