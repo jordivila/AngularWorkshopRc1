@@ -22,7 +22,7 @@ import { AppComponent } from './app.component';
     Feature1Module,
     Feature2Module,
     NotFoundModule,
-    CoreModule
+    CoreModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
