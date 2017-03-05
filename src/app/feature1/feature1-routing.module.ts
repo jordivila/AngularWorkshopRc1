@@ -1,19 +1,18 @@
+import { Feature1Guard } from './feature1-guard';
 import { Feature1Component } from './feature1/feature1.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+
 const routes: Routes = [{
-  path: 'feature1',
+  path: '',
   component: Feature1Component,
-  data: {
-    icon: 'info-circle',
-    title: 'Feature 1',
-  }
+  canActivate: [Feature1Guard],
 }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: []
+  providers: [Feature1Guard]
 })
 export class Feature1RoutingModule { }
