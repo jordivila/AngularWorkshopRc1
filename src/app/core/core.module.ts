@@ -1,3 +1,5 @@
+import { HttpInterceptorModule } from './services/http-interceptor/http-interceptor.module';
+import { ConfigService } from './services/config/config.service';
 import { SeriesService } from './services/series/series.service';
 import { LayoutModule } from './components/layout/layout.module';
 import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core';
@@ -7,10 +9,14 @@ import './operators/rxjs-operators';
 @NgModule({
   imports: [
     CommonModule,
-    LayoutModule
+    LayoutModule,
+    HttpInterceptorModule.forRoot()
   ],
   declarations: [],
-  exports: [LayoutModule]
+  exports: [
+    LayoutModule,
+    HttpInterceptorModule
+  ]
 })
 export class CoreModule {
 
@@ -18,7 +24,8 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
-        SeriesService
+        SeriesService,
+        ConfigService
       ]
     };
   }

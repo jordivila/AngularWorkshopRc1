@@ -1,3 +1,5 @@
+import { IHttpInterceptor } from './../../core/services/http-interceptor/http-interceptor.service';
+import { Http } from '@angular/http';
 import { Serie } from './../../core/models/serie';
 import { SeriesService } from './../../core/services/series/series.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,10 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Feature1Component implements OnInit {
 
-  constructor(private seriesService: SeriesService) { }
+  constructor(
+    private seriesService: SeriesService,
+    private http: Http) { }
 
 
   ngOnInit() {
+
+    (<IHttpInterceptor>this.http).lastRequest.subscribe((value: Date) => {
+      console.log(`Last HttpRequest=>${value}`);
+    });
+
+
     console.group('Http Request begin');
     console.log('Waiting show...');
 
