@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 import { TestBed, inject } from '@angular/core/testing';
 
 import { SeriesService } from './series.service';
@@ -5,6 +6,7 @@ import { SeriesService } from './series.service';
 describe('SeriesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [HttpModule],
       providers: [SeriesService]
     });
   });

@@ -42,13 +42,13 @@ export class HttpInterceptorService extends Http implements IHttpInterceptor {
     return (status !== 200);
   }
 
-  private checkError(status: number): void {
+  checkError(status: number): void {
     if (this.isError(status)) {
       this.onError(status);
     }
   }
 
-  private onError(status: number): void {
+  onError(status: number): void {
     console.log(`Error thrown => ${status}`);
   }
 
