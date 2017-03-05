@@ -1,0 +1,8 @@
+<div class="wait-indicator" [ngClass]="{'hidden': !isOpen }">
+    <div class="wait-indicator-content">
+        <i class="fa fa-5x fa-spinner fa-spin"></i>
+        <div class="row center">
+            <h1>{{ text || 'Please wait while the application loads...'}}</h1>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.wait-indicator {position:absolute;z-index:999;width:100%;top:0;height:100%;}
+.wait-indicator-content {top:40%;position:relative;width:100%;text-align:center;}
+.wait-indicator .fa {  
+  -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  background-image: -webkit-linear-gradient(90deg, #3ebede, rgba(62, 190, 222, 0.6), rgba(62, 190, 222, 0.15), rgba(62, 190, 222, 0));}
+.blurOverlay {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}

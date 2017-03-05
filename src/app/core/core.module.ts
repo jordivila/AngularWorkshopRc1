@@ -1,3 +1,4 @@
+import { LoadingModule } from './components/loading/loading.module';
 import { UsersService } from './services/users/users.service';
 import { HttpInterceptorModule } from './services/http-interceptor/http-interceptor.module';
 import { ConfigService } from './services/config/config.service';
@@ -11,12 +12,14 @@ import './operators/rxjs-operators';
   imports: [
     CommonModule,
     LayoutModule,
-    HttpInterceptorModule.forRoot()
+    HttpInterceptorModule.forRoot(),
+    LoadingModule
   ],
   declarations: [],
   exports: [
     LayoutModule,
-    HttpInterceptorModule
+    HttpInterceptorModule,
+    LoadingModule
   ]
 })
 export class CoreModule {

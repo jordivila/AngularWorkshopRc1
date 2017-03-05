@@ -1,3 +1,4 @@
+import { AppStoreService } from './app-store.service';
 import { CoreModule } from './core/core.module';
 import { NotFoundModule } from './not-found/not-found.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,7 +20,9 @@ import { AppComponent } from './app.component';
     NotFoundModule,
     CoreModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    AppStoreService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

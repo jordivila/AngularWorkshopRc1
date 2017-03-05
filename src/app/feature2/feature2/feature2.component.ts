@@ -1,3 +1,4 @@
+import { LoadingHelperService } from './../../core/components/loading/loading-helper.service';
 import { UsersService } from './../../core/services/users/users.service';
 import { IUserCreateForm } from './../../core/models/user';
 import { CustomValidatorsService } from './../../core/services/validations/custom-validators.service';
@@ -15,7 +16,8 @@ export class Feature2Component implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private usersService: UsersService) { }
+    private usersService: UsersService,
+    private loadingService: LoadingHelperService) { }
 
   ngOnInit() {
     this.userForm = this.initFormGroup();
@@ -39,6 +41,7 @@ export class Feature2Component implements OnInit {
 
   saveForm() {
     if (this.userForm.dirty && this.userForm.valid) {
+      this.loadingService.show('Saving user data');
       console.group('Save Form');
       console.log('Show waiting.....Saving user data');
       const user = <IUserCreateForm>this.userForm.value;
@@ -52,6 +55,7 @@ export class Feature2Component implements OnInit {
         })
         .finally(() => {
           console.log('Hide ewaiting');
+          this.loadingService.hide();
         })
         .subscribe();
     }
