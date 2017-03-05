@@ -52,6 +52,7 @@ export class Feature2Component implements OnInit {
         })
         .finally(() => {
           console.log('Hide ewaiting');
+          console.groupEnd();
         })
         .subscribe();
     }
