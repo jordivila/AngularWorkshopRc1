@@ -1,8 +1,11 @@
-<h1> 
-  {{title}} 
-</h1> 
+<h1>
+  {{title}}
+</h1>
 <app-loading></app-loading>
-<app-navbar></app-navbar> 
-<div class="container"> 
-  <router-outlet></router-outlet> 
+
+<app-navbar></app-navbar>
+<div 
+  class="container" 
+  [ngClass]="{ blurOverlay: isLoading}">
+  <router-outlet></router-outlet>
 </div>
