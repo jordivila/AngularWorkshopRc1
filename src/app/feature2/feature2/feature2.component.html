@@ -1,3 +1,36 @@
-<p>
-  feature2 works!
-</p>
+ 
+<form novalidate *ngIf="userForm" [formGroup]="userForm" (submit)="saveForm()"> 
+  <div class="row"> 
+    <div class="col-md-12"> 
+      <div class="row"> 
+        <div class=" form-group" [ngClass]="{'has-error': (!userForm.controls.name.valid && userForm.controls.name.touched)}"> 
+          <label for="name" class="control-label">Name</label> 
+          <app-validation-messages [control]="userForm.controls.name"></app-validation-messages> 
+          <br /> 
+          <input formControlName="name" id="name" placeholder="write here your name" #nameSpy class="form-control" autocomplete="off"  /> 
+          <span class="diagnostics">Log: {{nameSpy.className}}</span> 
+        </div> 
+      </div> 
+      <div class="row"> 
+        <div class=" form-group" [ngClass]="{'has-error': (!userForm.controls.email.valid && userForm.controls.email.touched)}"> 
+          <label for="email" class="control-label">Email</label> 
+          <app-validation-messages [control]="userForm.controls.email"></app-validation-messages> 
+          <br /> 
+          <input formControlName="email" id="email" placeholder="" #emailSpy class="form-control" autocomplete="off"  
+          /> 
+          <span class="diagnostics">Log: {{emailSpy.className}}</span> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+  <div class="row"> 
+    <div class="form-group"> 
+      <button type="submit" class="btn btn-primary" [disabled]="(!userForm.valid) || (!userForm.dirty)"> 
+          <i class="fa fa-magic"></i> 
+          Create Account 
+      </button> 
+      <br/> 
+      <span class="diagnostics">Form Log: Valid => {{userForm.valid}} || Dirty => {{userForm.dirty}}</span> 
+    </div> 
+  </div> 
+</form>

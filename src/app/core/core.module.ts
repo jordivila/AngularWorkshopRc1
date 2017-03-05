@@ -1,3 +1,4 @@
+import { UsersService } from './services/users/users.service';
 import { HttpInterceptorModule } from './services/http-interceptor/http-interceptor.module';
 import { ConfigService } from './services/config/config.service';
 import { SeriesService } from './services/series/series.service';
@@ -25,7 +26,8 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         SeriesService,
-        ConfigService
+        ConfigService,
+        UsersService
       ]
     };
   }

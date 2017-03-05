@@ -39,6 +39,9 @@ export class HttpInterceptorFakeService extends HttpInterceptorService {
             }
           ];
         }
+        if (connection.request.method === RequestMethod.Post) {
+          data = {};
+        }
       }
 
       if (data) {
