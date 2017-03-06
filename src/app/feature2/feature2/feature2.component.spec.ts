@@ -1,5 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { AppStoreService } from './../../app-store.service';
+import { UsersService } from './../../core/services/users/users.service';
+import { LoadingModule } from './../../core/components/loading/loading.module';
+import { HttpModule } from '@angular/http';
+import { FormValidationsModule } from './../../core/components/form-validations/form-validations.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ComponentFixture, async, TestBed } from '@angular/core/testing';
 import { Feature2Component } from './feature2.component';
 
 describe('Feature2Component', () => {
@@ -8,9 +14,17 @@ describe('Feature2Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Feature2Component ]
+      imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        FormValidationsModule,
+        HttpModule,
+        LoadingModule
+      ],
+      declarations: [Feature2Component],
+      providers: [UsersService, AppStoreService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

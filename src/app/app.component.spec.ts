@@ -1,3 +1,4 @@
+import { AppStoreService } from './app-store.service';
 import { CoreModule } from './core/core.module';
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -14,6 +15,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [AppStoreService]
     }).compileComponents();
   }));
 
