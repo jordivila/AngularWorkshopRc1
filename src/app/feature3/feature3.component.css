@@ -1,2 +1,10 @@
-app-feature3 ul {width:20em;}
-app-feature3 li {width:20em;padding:0.5em;}
+app-feature3 table {margin:0 auto 0 auto;}
+app-feature3 td  {text-align: center;}
+app-feature3 .circle {
+    margin:0 auto 0 auto;
+    border-radius: 50%;
+    width:5em;
+    height:5em;
+    text-align: center;
+    cursor: pointer;
+}

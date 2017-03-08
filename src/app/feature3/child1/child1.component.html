@@ -1,15 +1,22 @@
-<ul>
-  <li>
-    <div class="circle" [style.background-color]="color">
-      child1 works!
-    </div>
-    <ul>
-      <li>
-        <app-child1-1 [color]="color"></app-child1-1>
-      </li>
-      <li>
-        <app-child1-2 [color]="color"></app-child1-2>
-      </li>
-    </ul>
-  </li>
-</ul>
+<table>
+  <tr>
+    <td>
+      <div class="circle" [style.background-color]="color">
+        parent
+      </div>
+      <table>
+        <tr>
+          <td>
+            <app-child1-1 [color]="color"></app-child1-1>
+          </td>
+          <td>
+            <app-child1-2 [color]="color"></app-child1-2>
+          </td>
+          <td>
+            <app-child1-3 [color]="color"></app-child1-3>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
