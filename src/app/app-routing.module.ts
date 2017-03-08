@@ -18,11 +18,19 @@ const routes: Routes = [
       icon: 'info-circle',
       title: 'Feature 2',
     }
+  },
+  {
+    path: 'feature3',
+    loadChildren: 'app/feature3/feature3.module#Feature3Module',
+    data: {
+      icon: 'info-circle',
+      title: 'Feature 3',
+    }
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,  { useHash: true, preloadingStrategy: NoPreloading, enableTracing: true })],
+  imports: [RouterModule.forRoot(routes, { useHash: true, preloadingStrategy: NoPreloading, enableTracing: true })],
   exports: [RouterModule],
   providers: []
 })
