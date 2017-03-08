@@ -24,7 +24,7 @@ export class HttpInterceptorFakeService extends HttpInterceptorService {
   }
 
   private mockResults(connection: MockConnection) {
-    // wrap in timeout to simulate server api call 
+    // wrap in timeout to simulate server api call
     setTimeout(() => {
 
       let data: any;

@@ -8,7 +8,7 @@ export class CustomValidatorsService {
   constructor() { }
 
   static emailValidator(control: AbstractControl) {
-    // tslint:disable-next-line 
+    // tslint:disable-next-line
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const result = re.test(control.value);
     if (result) {
